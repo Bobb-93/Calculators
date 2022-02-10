@@ -1,0 +1,17 @@
+﻿body {
+}
+
+h1 {
+    font-family: "Open Sans",Helvetica,Arial,sans-serif;
+    font-size: 32px;
+    color: #006398;
+    padding-bottom: 6px;
+}
+
+header > p {
+    color:#9e9e9e;
+}
+
+#MainContent_CreditCalculatorButton, #MainContent_CalculatorRefinanceButton {
+    margin-right: 10px;
+}
