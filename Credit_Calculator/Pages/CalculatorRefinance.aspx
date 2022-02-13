@@ -74,7 +74,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="label-container">
-                    <label for="earlyRepaymentPenaltyTextBox">Срок на кредита (месеци) *</label>
+                    <label for="earlyRepaymentPenaltyTextBox">Първоначална такса за обработка (%) *</label>
                     <%--<input name="ctl00$MainContent$viewCalc$ctl04$txtPeriod" type="text" maxlength="3" id="MainContent_viewCalc_ctl04_txtPeriod" class="table-main-input" required="required">--%>
                     <asp:TextBox ID="earlyRepaymentPenaltyTextBox" runat="server" required></asp:TextBox>
                     <span class="error"></span>

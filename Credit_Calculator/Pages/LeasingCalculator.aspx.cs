@@ -20,8 +20,29 @@ namespace Credit_Calculator
             decimal firstInstallment = Convert.ToDecimal(firstInstallmentTextBox.Text);
             decimal leasingPeriod = Convert.ToDecimal(leasingPeriodTextBox.Text);
             decimal monthlyPaymentTextBox = Convert.ToDecimal(leasingPeriodTextBox.Text);
-            decimal initialTaxProcessing = Convert.ToDecimal(initialTaxProcessingTextBox.Text);
+
+            string initialTaxProcessingText = initialTaxProcessingTextBox.Text;
+            decimal initialTaxProcessing;
             string cboTaxProcessing = cboTaxProcessingDropDown.Text;
+
+            if(initialTaxProcessingText == "")
+            {
+                initialTaxProcessing = 0;
+            }
+            else
+            {
+                initialTaxProcessing = Convert.ToDecimal(initialTaxProcessingTextBox.Text);
+
+                if (cboTaxProcessing == "%")
+                {
+                    initialTaxProcessing = priceWithVAT * (initialTaxProcessing/100);
+                }
+                //else if (cboTaxProcessing == "лв")
+                //{
+
+                //}
+            }
+            
         }
     }
 }

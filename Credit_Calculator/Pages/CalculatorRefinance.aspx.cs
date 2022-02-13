@@ -24,6 +24,8 @@ namespace Credit_Calculator
             decimal newInterestRate = Convert.ToDecimal(newInterestRateTextBox.Text);
             decimal initialFeesPercent = Convert.ToDecimal(initialFeesPercentTextBox.Text);
             decimal initialFeesAmount = Convert.ToDecimal(initialFeesAmountTextBox.Text);
+
+            //нямаме незадължителни полета => нямаме необходимост от проверки за непопълнени полета
         }
     }
 }
