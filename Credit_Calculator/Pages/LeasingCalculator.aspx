@@ -97,6 +97,24 @@
                 <p>*Задължителни полета</p>
             </div>
         </div>
+
+        <asp:Table runat="server">
+            <asp:TableHeaderRow>
+                <asp:TableHeaderCell>РЕЗУЛТАТИ</asp:TableHeaderCell>
+            </asp:TableHeaderRow>
+            <asp:TableRow>
+                <asp:TableCell>ГОДИШЕН ПРОЦЕНТЕН РАЗХОД:</asp:TableCell>
+                <asp:TableCell ID="yearPercentageCost"></asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>ОБЩО ИЗПЛАТЕНО С ТАКСИ:</asp:TableCell>
+                <asp:TableCell ID="totalPaid"></asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>ОБЩО ТАКСИ:</asp:TableCell>
+                <asp:TableCell ID="totalTaxes"></asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>
     </main>
 </asp:Content>
 

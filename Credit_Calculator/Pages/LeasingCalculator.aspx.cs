@@ -19,7 +19,7 @@ namespace Credit_Calculator
             decimal priceWithVAT = Convert.ToDecimal(priceWithVATTextBox.Text);
             decimal firstInstallment = Convert.ToDecimal(firstInstallmentTextBox.Text);
             decimal leasingPeriod = Convert.ToDecimal(leasingPeriodTextBox.Text);
-            decimal monthlyPaymentTextBox = Convert.ToDecimal(leasingPeriodTextBox.Text);
+            decimal monthlyPayment = Convert.ToDecimal(monthlyPaymentTextBox.Text);
 
             string initialTaxProcessingText = initialTaxProcessingTextBox.Text;
             decimal initialTaxProcessing;
@@ -41,6 +41,24 @@ namespace Credit_Calculator
                 //{
 
                 //}
+            }
+
+            decimal totalPrice = firstInstallment + (leasingPeriod * monthlyPayment) + initialTaxProcessing;
+            
+            //НЕ работи като хората
+            decimal percantageCost = ((totalPrice - firstInstallment) / priceWithVAT)*100;
+
+            totalPaid.Text = totalPrice.ToString("0.00");
+            yearPercentageCost.Text = percantageCost.ToString("0.00") +"%";
+
+            if(initialTaxProcessing == 0)
+            {
+                totalTaxes.Text = "NA";
+            }
+            else
+            {
+                totalTaxes.Text = initialTaxProcessing.ToString("0.00");
+
             }
             
         }

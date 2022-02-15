@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace Credit_Calculator
@@ -230,6 +231,27 @@ namespace Credit_Calculator
                 }
             }
 
+            decimal yearlyPercentCostVariable = 0;
+            decimal repayedWithInterestAndTaxesVariable = 0;
+
+            decimal taxesAndComissionsVariable = taxEntry + taxProcessing + otherTaxes + taxYearManagement + taxOtherYear + taxMonthManagement + taxOtherMonth;
+            taxesAndComissions.Text = taxesAndComissionsVariable.ToString();
+
+            decimal interestsVariable = 0;
+            decimal paymentsVariable = 0;
+
+            //Генериране на таблица за "Погасителен план"
+            HtmlTableRow row;
+            HtmlTableCell cell;
+            for(int i = 1; i < loanTerm; i++)
+            {
+                row = new HtmlTableRow();
+                for(int j = 0; j < 8; j++)
+                {
+                    cell = new HtmlTableCell();
+                    cell.InnerHtml = i.ToString();
+                }
+            }
         }
     }
 }

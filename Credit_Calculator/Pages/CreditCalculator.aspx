@@ -306,5 +306,31 @@
                 <%--<asp:Button ID="calculateCredit" runat="server" Text="Изчисли" />--%>
             </div>
         </div>
+
+         <asp:Table runat="server">
+            <asp:TableHeaderRow>
+                <asp:TableHeaderCell>Сумарни разходи</asp:TableHeaderCell>
+            </asp:TableHeaderRow>
+            <asp:TableRow>
+                <asp:TableCell>ГОДИШЕН ПРОЦЕНТЕН РАЗХОД:</asp:TableCell>
+                <asp:TableCell ID="yearlyPercentCost"></asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>ПОГАСЕНИ С ЛИХВИ И ТАКСИ:</asp:TableCell>
+                <asp:TableCell ID="repayedWithInterestAndTaxes"></asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>ТАКСИ И КОМИСИОННИ:</asp:TableCell>
+                <asp:TableCell ID="taxesAndComissions"></asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>ЛИХВИ:</asp:TableCell>
+                <asp:TableCell ID="interests"></asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>ВНОСКИ:</asp:TableCell>
+                <asp:TableCell ID="payments"></asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>
     </main>
 </asp:Content>

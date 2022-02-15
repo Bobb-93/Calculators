@@ -74,7 +74,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="label-container">
-                    <label for="earlyRepaymentPenaltyTextBox">Първоначална такса за обработка (%) *</label>
+                    <label for="earlyRepaymentPenaltyTextBox">Такса за предсрочно погасяване (%) *</label>
                     <%--<input name="ctl00$MainContent$viewCalc$ctl04$txtPeriod" type="text" maxlength="3" id="MainContent_viewCalc_ctl04_txtPeriod" class="table-main-input" required="required">--%>
                     <asp:TextBox ID="earlyRepaymentPenaltyTextBox" runat="server" required></asp:TextBox>
                     <span class="error"></span>
@@ -122,6 +122,51 @@
                 <p>*Задължителни полета</p>
             </div>
         </div>
+
+        <asp:Table runat="server">
+            <asp:TableHeaderRow>
+                <asp:TableHeaderCell>РЕЗУЛТАТИ</asp:TableHeaderCell>
+            </asp:TableHeaderRow>
+            <asp:TableRow>
+                <asp:TableCell>Резултат</asp:TableCell>
+                <asp:TableCell>Текущ кредит</asp:TableCell>
+                <asp:TableCell>Нов кредит</asp:TableCell>
+                <asp:TableCell>+/- Спестявания</asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>Лихва</asp:TableCell>
+                <asp:TableCell ID="currentCreditInterest"></asp:TableCell>
+                <asp:TableCell ID="newCreditInterest"></asp:TableCell>
+                <asp:TableCell ID="interestSavings"></asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>Срокове на кредитите</asp:TableCell>
+                <asp:TableCell ID="currentCreditTerm"></asp:TableCell>
+                <asp:TableCell ID="newCreditTerm"></asp:TableCell>
+                <asp:TableCell ID="termSavings"></asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>Такса за предсрочно погасяване</asp:TableCell>
+                <asp:TableCell ID="earlyRepaymentFeeCurrentCredit"></asp:TableCell>
+                <asp:TableCell></asp:TableCell>
+                <asp:TableCell></asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>Месечна вноска</asp:TableCell>
+                <asp:TableCell ID="monthlyInstallmentCurrentCredit"></asp:TableCell>
+                <asp:TableCell ID="monthlyInstallmentNewCredit"></asp:TableCell>
+                <asp:TableCell ID="monthlyInstallmentSavings"></asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>Общо изплатени</asp:TableCell>
+                <asp:TableCell ID="totalPaidCurrentCredit"></asp:TableCell>
+                <asp:TableCell ID="totalPaidNewCredit"></asp:TableCell>
+                <asp:TableCell ID="totalPaidSavings"></asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>
+        <span>
+            <asp:Literal ID="solutionSpan" runat="server"></asp:Literal>
+        </span>
     </main>
 </asp:Content>
 
