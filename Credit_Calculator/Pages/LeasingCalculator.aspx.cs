@@ -45,7 +45,7 @@ namespace Credit_Calculator
 
             decimal totalPrice = firstInstallment + (leasingPeriod * monthlyPayment) + initialTaxProcessing;
             
-            //НЕ работи като хората
+            //дава различни стойности
             decimal percantageCost = ((totalPrice - firstInstallment) / priceWithVAT)*100;
 
             totalPaid.Text = totalPrice.ToString("0.00");

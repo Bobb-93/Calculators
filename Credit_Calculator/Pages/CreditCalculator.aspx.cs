@@ -241,17 +241,17 @@ namespace Credit_Calculator
             decimal paymentsVariable = 0;
 
             //Генериране на таблица за "Погасителен план"
-            HtmlTableRow row;
-            HtmlTableCell cell;
-            for(int i = 1; i < loanTerm; i++)
-            {
-                row = new HtmlTableRow();
-                for(int j = 0; j < 8; j++)
-                {
-                    cell = new HtmlTableCell();
-                    cell.InnerHtml = i.ToString();
-                }
-            }
+            //HtmlTableRow row;
+            //HtmlTableCell cell;
+            //for(int i = 1; i < loanTerm; i++)
+            //{
+            //    row = new HtmlTableRow();
+            //    for(int j = 0; j < 8; j++)
+            //    {
+            //        cell = new HtmlTableCell();
+            //        cell.InnerHtml = i.ToString();
+            //    }
+            //}
         }
     }
 }

@@ -26,15 +26,20 @@ namespace Credit_Calculator
             decimal initialFeesAmount = Convert.ToDecimal(initialFeesAmountTextBox.Text);
 
             //нямаме незадължителни полета => нямаме необходимост от проверки за непопълнени полета
-            currentCreditInterest.Text = interestPercent.ToString();
-            newCreditInterest.Text = newInterestRate.ToString();
+            currentCreditInterest.Text = interestPercent.ToString()+"%";
+            newCreditInterest.Text = newInterestRate.ToString()+"%";
             currentCreditTerm.Text = loanTermRefinance.ToString();
-            newCreditTerm.Text = (loanTermRefinance - paymentsMade).ToString();
-            //earlyRepaymentFeeCurrentCredit - не знам как я смятат, аз съм използвал следната дървена формула:
-            earlyRepaymentFeeCurrentCredit.Text = ((refinanceAmount * earlyRepaymentPenalty)/100).ToString("0.00");
 
-            decimal monthlyInstallmentCurrentCreditVariable = refinanceAmount / loanTermRefinance;
-            decimal monthlyInstallmentNewCreditVariable = refinanceAmount / loanTermRefinance;
+            decimal newCreditTermVariable = loanTermRefinance - paymentsMade;
+            newCreditTerm.Text = newCreditTermVariable.ToString();
+
+            //earlyRepaymentFeeCurrentCredit - не знам как я смятат, аз съм използвал следната дървена формула:
+            //делим на срока на кредита, умножаваме по броя направени вноски, умножаваме по таксата за предсрочно погасяване и делим на 100
+            decimal earlyRepaymentFeeCurrentCreditVariable = (((refinanceAmount/loanTermRefinance) * newCreditTermVariable) * earlyRepaymentPenalty) / 100;
+            earlyRepaymentFeeCurrentCredit.Text = earlyRepaymentFeeCurrentCreditVariable.ToString("0.00");
+
+            decimal monthlyInstallmentCurrentCreditVariable = (refinanceAmount / loanTermRefinance) + ((refinanceAmount/loanTermRefinance)*interestPercent)/100;
+            decimal monthlyInstallmentNewCreditVariable = (refinanceAmount / loanTermRefinance) + ((refinanceAmount / loanTermRefinance) * newInterestRate) / 100;
 
             monthlyInstallmentCurrentCredit.Text = monthlyInstallmentCurrentCreditVariable.ToString("0.00");
             monthlyInstallmentNewCredit.Text = monthlyInstallmentNewCreditVariable.ToString("0.00");
@@ -42,10 +47,13 @@ namespace Credit_Calculator
             decimal monthlyInstallmentSavingsVariable = monthlyInstallmentCurrentCreditVariable - monthlyInstallmentNewCreditVariable;
             monthlyInstallmentSavings.Text = monthlyInstallmentSavingsVariable.ToString("0.00");
 
-            decimal totalPaidCurrentCreditVariable = monthlyInstallmentCurrentCreditVariable * loanTermRefinance;
+            //Общо изплатени, ако плащаме по стария кредит
+            decimal totalPaidCurrentCreditVariable = monthlyInstallmentCurrentCreditVariable * newCreditTermVariable;
             totalPaidCurrentCredit.Text = totalPaidCurrentCreditVariable.ToString("0.00");
 
-            decimal totalPaidNewCreditVariable = monthlyInstallmentNewCreditVariable * loanTermRefinance;
+            //Общо изплатени, ако плащаме по новия кредит - събираме обаче и таксите за предсрочно погасяване и първоначалната такса на новия кредит
+            decimal totalPaidNewCreditVariable = monthlyInstallmentNewCreditVariable * newCreditTermVariable + earlyRepaymentFeeCurrentCreditVariable + 
+                (refinanceAmount*initialFeesPercent)/100 + initialFeesAmount;
             totalPaidNewCredit.Text = totalPaidNewCreditVariable.ToString("0.00");
 
             decimal totalPaidSavingsVariable = totalPaidCurrentCreditVariable - totalPaidNewCreditVariable;

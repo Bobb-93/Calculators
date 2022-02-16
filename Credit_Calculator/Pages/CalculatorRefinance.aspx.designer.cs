@@ -15,7 +15,7 @@ namespace Credit_Calculator
     {
 
         /// <summary>
-        /// refinanceAmountTextBox control.
+        /// amountTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -24,7 +24,7 @@ namespace Credit_Calculator
         protected global::System.Web.UI.WebControls.TextBox refinanceAmountTextBox;
 
         /// <summary>
-        /// interestPercentTextBox control.
+        /// loanTermTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -33,7 +33,7 @@ namespace Credit_Calculator
         protected global::System.Web.UI.WebControls.TextBox interestPercentTextBox;
 
         /// <summary>
-        /// loanTermRefinanceTextBox control.
+        /// interestPercantageTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -42,7 +42,7 @@ namespace Credit_Calculator
         protected global::System.Web.UI.WebControls.TextBox loanTermRefinanceTextBox;
 
         /// <summary>
-        /// paymentsMadeTextBox control.
+        /// paymentTypeDropDown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -51,7 +51,7 @@ namespace Credit_Calculator
         protected global::System.Web.UI.WebControls.TextBox paymentsMadeTextBox;
 
         /// <summary>
-        /// earlyRepaymentPenaltyTextBox control.
+        /// promotionPeriodTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -60,7 +60,7 @@ namespace Credit_Calculator
         protected global::System.Web.UI.WebControls.TextBox earlyRepaymentPenaltyTextBox;
 
         /// <summary>
-        /// newInterestRateTextBox control.
+        /// promotionalInterestTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -69,7 +69,7 @@ namespace Credit_Calculator
         protected global::System.Web.UI.WebControls.TextBox newInterestRateTextBox;
 
         /// <summary>
-        /// initialFeesPercentTextBox control.
+        /// gratisPeriodTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -78,7 +78,7 @@ namespace Credit_Calculator
         protected global::System.Web.UI.WebControls.TextBox initialFeesPercentTextBox;
 
         /// <summary>
-        /// initialFeesAmountTextBox control.
+        /// taxEntryTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -87,7 +87,7 @@ namespace Credit_Calculator
         protected global::System.Web.UI.WebControls.TextBox initialFeesAmountTextBox;
 
         /// <summary>
-        /// calculateRefinance control.
+        /// calculateCredit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -95,8 +95,9 @@ namespace Credit_Calculator
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button calculateRefinance;
 
+
         /// <summary>
-        /// currentCreditInterest control.
+        /// yearPercentageCost control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -105,7 +106,7 @@ namespace Credit_Calculator
         protected global::System.Web.UI.WebControls.TableCell currentCreditInterest;
 
         /// <summary>
-        /// newCreditInterest control.
+        /// totalPaid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -114,7 +115,7 @@ namespace Credit_Calculator
         protected global::System.Web.UI.WebControls.TableCell newCreditInterest;
 
         /// <summary>
-        /// interestSavings control.
+        /// totalTaxes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -123,7 +124,7 @@ namespace Credit_Calculator
         protected global::System.Web.UI.WebControls.TableCell interestSavings;
 
         /// <summary>
-        /// currentCreditTerm control.
+        /// totalTaxes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -132,7 +133,7 @@ namespace Credit_Calculator
         protected global::System.Web.UI.WebControls.TableCell currentCreditTerm;
 
         /// <summary>
-        /// newCreditTerm control.
+        /// totalTaxes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -141,7 +142,7 @@ namespace Credit_Calculator
         protected global::System.Web.UI.WebControls.TableCell newCreditTerm;
 
         /// <summary>
-        /// termSavings control.
+        /// totalTaxes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -150,7 +151,7 @@ namespace Credit_Calculator
         protected global::System.Web.UI.WebControls.TableCell termSavings;
 
         /// <summary>
-        /// earlyRepaymentFeeCurrentCredit control.
+        /// totalTaxes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -159,7 +160,7 @@ namespace Credit_Calculator
         protected global::System.Web.UI.WebControls.TableCell earlyRepaymentFeeCurrentCredit;
 
         /// <summary>
-        /// monthlyInstallmentCurrentCredit control.
+        /// totalTaxes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -168,7 +169,7 @@ namespace Credit_Calculator
         protected global::System.Web.UI.WebControls.TableCell monthlyInstallmentCurrentCredit;
 
         /// <summary>
-        /// monthlyInstallmentNewCredit control.
+        /// totalTaxes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -177,7 +178,7 @@ namespace Credit_Calculator
         protected global::System.Web.UI.WebControls.TableCell monthlyInstallmentNewCredit;
 
         /// <summary>
-        /// monthlyInstallmentSavings control.
+        /// totalTaxes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -186,7 +187,7 @@ namespace Credit_Calculator
         protected global::System.Web.UI.WebControls.TableCell monthlyInstallmentSavings;
 
         /// <summary>
-        /// totalPaidCurrentCredit control.
+        /// totalTaxes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -195,7 +196,7 @@ namespace Credit_Calculator
         protected global::System.Web.UI.WebControls.TableCell totalPaidCurrentCredit;
 
         /// <summary>
-        /// totalPaidNewCredit control.
+        /// totalTaxes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -204,7 +205,7 @@ namespace Credit_Calculator
         protected global::System.Web.UI.WebControls.TableCell totalPaidNewCredit;
 
         /// <summary>
-        /// totalPaidSavings control.
+        /// totalTaxes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -213,7 +214,7 @@ namespace Credit_Calculator
         protected global::System.Web.UI.WebControls.TableCell totalPaidSavings;
 
         /// <summary>
-        /// solutionSpan control.
+        /// totalTaxes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
