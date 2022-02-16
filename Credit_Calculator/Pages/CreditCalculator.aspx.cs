@@ -235,10 +235,24 @@ namespace Credit_Calculator
             decimal repayedWithInterestAndTaxesVariable = 0;
 
             decimal taxesAndComissionsVariable = taxEntry + taxProcessing + otherTaxes + taxYearManagement + taxOtherYear + taxMonthManagement + taxOtherMonth;
-            taxesAndComissions.Text = taxesAndComissionsVariable.ToString();
+            taxesAndComissions.Text = taxesAndComissionsVariable.ToString("0.00");
 
             decimal interestsVariable = 0;
             decimal paymentsVariable = 0;
+
+            interestsVariable = amount/loanTerm*(interestPercantage/100);
+            //1)размерът на кредита го разделям на срока (в месеци)
+            //2)умножаваме по ли
+            paymentsVariable = amount + (interestsVariable * loanTerm);
+            payments.Text = paymentsVariable.ToString("0.00");
+            
+            interests.Text = interestsVariable.ToString("0.00");
+
+            repayedWithInterestAndTaxesVariable = paymentsVariable + taxesAndComissionsVariable;
+            repayedWithInterestAndTaxes.Text = repayedWithInterestAndTaxesVariable.ToString("0.00");
+
+            yearlyPercentCostVariable = ((repayedWithInterestAndTaxesVariable / amount)*100) - 100;
+            yearlyPercentCost.Text = yearlyPercentCostVariable.ToString("0.00")+"%";
 
             //Генериране на таблица за "Погасителен план"
             //HtmlTableRow row;
