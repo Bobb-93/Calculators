@@ -240,13 +240,15 @@ namespace Credit_Calculator
             decimal interestsVariable = 0;
             decimal paymentsVariable = 0;
 
-            interestsVariable = amount/loanTerm*(interestPercantage/100);
+            interestsVariable = (amount/loanTerm)*interestPercantage/100;
+            //interestsVariable = (amount * interestPercantage) / 100;
+
             //1)размерът на кредита го разделям на срока (в месеци)
-            //2)умножаваме по ли
+            //2)умножаваме по лихвата...
             paymentsVariable = amount + (interestsVariable * loanTerm);
             payments.Text = paymentsVariable.ToString("0.00");
             
-            interests.Text = interestsVariable.ToString("0.00");
+            interests.Text = (interestsVariable*loanTerm).ToString("0.00");
 
             repayedWithInterestAndTaxesVariable = paymentsVariable + taxesAndComissionsVariable;
             repayedWithInterestAndTaxes.Text = repayedWithInterestAndTaxesVariable.ToString("0.00");
